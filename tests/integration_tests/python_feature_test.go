@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 	"time"
-	"fmt"
+
 	"github.com/langgenius/dify-sandbox/internal/core/runner/types"
 	"github.com/langgenius/dify-sandbox/internal/service"
 )
@@ -21,7 +21,7 @@ print(base64.b64decode(base64.b64encode(b"hello world")).decode())
 		if resp.Code != 0 {
 			t.Fatal(resp)
 		}
-		fmt.Println("%v", resp)
+		t.Logf("%v", resp)
 		
 		if resp.Data.(*service.RunCodeResponse).Stderr != "" {
 			t.Fatalf("unexpected error: %s\n", resp.Data.(*service.RunCodeResponse).Stderr)
