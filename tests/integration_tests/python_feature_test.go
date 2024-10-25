@@ -21,7 +21,7 @@ print(base64.b64decode(base64.b64encode(b"hello world")).decode())
 		if resp.Code != 0 {
 			t.Fatal(resp)
 		}
-		t.Logf("%v", resp)
+		t.Logf("%v", resp.Data.(*service.RunCodeResponse))
 		
 		if resp.Data.(*service.RunCodeResponse).Stderr != "" {
 			t.Fatalf("unexpected error: %s\n", resp.Data.(*service.RunCodeResponse).Stderr)
