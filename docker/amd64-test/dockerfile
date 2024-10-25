@@ -15,7 +15,7 @@ FROM python:3.10-slim-bookworm as tester
 # && echo "deb http://mirrors.aliyun.com/debian testing main" > /etc/apt/sources.list
 
 # install system dependencies
-RUN echo "deb http://deb.debian.org/debian testing main" > /etc/apt/sources.list \
+RUN echo "deb http://mirrors.aliyun.com/debian testing main" > /etc/apt/sources.list \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
        pkg-config \
